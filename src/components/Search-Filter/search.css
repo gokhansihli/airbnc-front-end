@@ -1,0 +1,114 @@
+.search-bar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 3rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 4rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .search-bar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 3rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .search-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    padding: 0;
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .search-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    padding: 0;
+    padding-left: 1rem;
+  }
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  padding-bottom: 2px;
+  color: #222222;
+}
+
+.value {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1rem;
+  border: none;
+  white-space: nowrap;
+  color: #6a6a6a;
+}
+
+input {
+  width: 100%;
+  max-width: 100%;
+  max-height: 1rem;
+  flex: 1 1 150px;
+  min-width: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.divider {
+  width: 1px;
+  height: 2rem;
+  background: #dddddd;
+}
+
+.search-button {
+  font-size: xx-large;
+  background: #c1111f;
+  border: none;
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute; /* Positions the dropdown over the rest of the page */
+  top: 110%; /* Places it right below the input */
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  max-height: 200px;
+  overflow-y: auto;
+}

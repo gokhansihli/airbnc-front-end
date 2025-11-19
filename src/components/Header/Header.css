@@ -1,0 +1,11 @@
+@media (max-width: 599px) {
+  .Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-shrink: 1;
+    margin: 1rem 2rem 1rem 2rem;
+    border: green 1px solid;
+    grid-area: header;
+  }
+}

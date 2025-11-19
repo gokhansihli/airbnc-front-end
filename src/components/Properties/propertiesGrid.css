@@ -1,0 +1,36 @@
+.propertiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .propertiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .propertiesGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.search-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 2rem 6rem 2rem;
+}
+
+@media (max-width: 599px) {
+  .search-filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 2rem 6rem 2rem;
+  }
+}

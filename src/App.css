@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+}
+
+.App {
+  border: red 1px solid;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+
+  display: grid;
+  grid-template-rows: 4rem auto 8rem;
+  grid-template-areas: "header" "properties" "footer";
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 2rem 1rem 2rem;
+  border: green 1px solid;
+  grid-area: header;
+}
+
+.Properties {
+  border: red 1px solid;
+  grid-area: properties;
+}
+
+.Footer {
+  border: black 1px solid;
+  grid-area: footer;
+}
