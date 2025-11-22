@@ -1,0 +1,29 @@
+.collapse-section {
+  padding: 10px 0;
+  position: relative;
+}
+
+.collapse-section.expanded::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  height: 1px;
+  background-color: #ebebeb;
+}
+
+.collapse-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding-right: 3rem;
+}
+
+.arrow {
+  font-size: 30px;
+  display: inline-block;
+  transform: scaleX(1.9);
+  padding-top: 1.2rem;
+}

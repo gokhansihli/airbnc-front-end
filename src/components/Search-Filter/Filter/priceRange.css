@@ -1,0 +1,75 @@
+.price-range {
+  position: relative;
+  width: 90%;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1.2rem;
+  padding: 0 2rem;
+}
+
+.price-range::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  /* width: 93%; */
+  height: 1px;
+  left: 1rem;
+  right: 1.2rem;
+  background-color: #ebebeb;
+  margin: -4px;
+}
+
+.slider-values {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #484848;
+}
+
+/* Track */
+.rc-slider {
+  position: relative;
+  width: 100%;
+  padding: 6px 0;
+}
+
+.rc-slider-rail {
+  height: 2px;
+  background-color: #c1111f;
+}
+
+.rc-slider-track {
+  height: 4px;
+  background-color: #c1111f;
+}
+
+/* Handles */
+.rc-slider-handle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c1111f;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: grab;
+  margin-top: -7px; /* vertically center handle */
+  transition: box-shadow 0.2s ease;
+}
+
+.rc-slider-handle:hover {
+  border: 2px solid #c1111f;
+  box-shadow: 0 0 5px #c1111f;
+}
+
+.rc-slider-handle:active {
+  cursor: grabbing;
+  outline: none;
+
+  border: 2px solid #c1111f;
+  box-shadow: 0 0 8px #c1111f;
+}
+
+/* Focus outline removal */
+.rc-slider-handle:focus {
+  outline: none;
+  box-shadow: 0 0 8px #c1111f;
+}

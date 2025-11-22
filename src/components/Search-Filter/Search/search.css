@@ -98,17 +98,3 @@ input {
   border-radius: 3rem;
   cursor: pointer;
 }
-
-.dropdown-content {
-  position: absolute; /* Positions the dropdown over the rest of the page */
-  top: 110%; /* Places it right below the input */
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  background: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
-  max-height: 200px;
-  overflow-y: auto;
-}

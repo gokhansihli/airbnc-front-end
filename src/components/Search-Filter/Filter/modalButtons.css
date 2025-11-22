@@ -1,0 +1,39 @@
+.modal-buttons {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+  padding: 0 1rem;
+}
+
+.modal-button {
+  min-width: 6rem;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.1s, border-color 0.2s,
+    background-color 0.2s;
+}
+
+.modal-buttons::after {
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+  width: 95%;
+  height: 1px;
+  background-color: #ebebeb;
+  margin: -4px;
+}
+
+.modal-button:hover {
+  border: 1px solid #222222;
+}
+
+.modal-button.active {
+  border: 1.5px solid black;
+}
