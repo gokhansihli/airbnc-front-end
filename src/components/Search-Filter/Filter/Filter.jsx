@@ -8,6 +8,7 @@ import Order from "./Order";
 import "./filter.css";
 import { useSearchParams } from "react-router";
 import { getAmenities } from "../../../utils/api";
+import FilterIcon from "../../../icons/FilterIcon";
 
 export default function Filter({ properties }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -66,12 +67,15 @@ export default function Filter({ properties }) {
           setIsModal(true);
         }}
       >
-        <div className="filter-symbol">&#x232F;</div>
+        <div className="filter-symbol">
+          <FilterIcon />
+        </div>
         <div className="filter-section">Filters</div>
       </div>
       {isModal && (
         <Modal onClick={() => setIsModal(false)}>
           <div className="filters">
+            <div className="filter-header">Filters</div>
             <PropertyType
               uniquePropertyTypes={uniquePropertyTypes}
               selectType={selectType}

@@ -1,0 +1,182 @@
+.login-btn {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  padding-top: 0.6rem;
+  cursor: pointer;
+}
+
+.user-btn {
+  border: none;
+  background: none;
+}
+
+.user-btn svg {
+  border: none;
+  background: none;
+  width: 24px;
+  height: 24px;
+}
+
+.user-btn:hover {
+  cursor: pointer;
+}
+
+.user-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+.auth-header {
+  position: sticky;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.08rem;
+  padding: 1rem 0;
+  box-shadow: 0 -2px 16px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  border-top: 1px solid #e0e0e0;
+  background-color: #fbfbfb;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-bottom: 0.4rem;
+}
+
+.auth-header div:nth-child(2) {
+  position: absolute;
+  right: 1.6rem;
+}
+
+.auth-header div:nth-child(2):hover {
+  cursor: pointer;
+  color: #555555;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  font-family: "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.4px;
+  padding: 0 1.2rem;
+  margin: 0.6rem 0;
+}
+
+.form-group h2 {
+  font-size: 1.1rem;
+  padding: 2px;
+  margin: 0.8rem 0 0.6rem 0;
+}
+
+.form-group input {
+  width: 100%;
+  min-width: 430px;
+  min-height: 3.4rem;
+  padding: 0 16px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: inherit;
+  letter-spacing: inherit;
+  border: 1px solid #838282;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.name-inputs input:nth-child(1) {
+  border-bottom: 0;
+  margin-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.name-inputs input:nth-child(2) {
+  border-radius: 0 0 8px 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  min-width: 430px;
+  min-height: 44px;
+  border: 1px solid #838282;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  margin: 40px 0 10px 0;
+  font-family: inherit;
+  letter-spacing: inherit;
+  background-color: #c1111f;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #cb1322;
+  transition: background 0.2s;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1.4rem 0 0 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  display: block;
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.or-divider span {
+  padding: 0 3px;
+  color: #444;
+  white-space: nowrap;
+}
+
+.signup-option {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.signup-option a {
+  color: #c1111f;
+  text-decoration: none;
+}
+.signup-option a:hover {
+  text-decoration: underline;
+}
+
+section button {
+  width: 6rem;
+  border: 1px solid #8f8e8e;
+  background-color: #fefefe;
+  border-radius: 8px;
+  padding: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.1s, border-color 0.2s,
+    background-color 0.2s;
+}
+
+section button:hover {
+  border: 1px solid #222222;
+}
+
+section button.active {
+  outline: 1px solid black;
+  outline-offset: 1;
+}

@@ -34,3 +34,19 @@ export const getAmenities = async () => {
 
   return amenities;
 };
+
+export const signup = async (credentials) => {
+  const { data } = await axios.post(
+    "https://airbnc-b0sn.onrender.com/signup",
+    credentials
+  );
+  return data;
+};
+
+export const login = async (credentials) => {
+  const { data } = await axios.post(
+    "https://airbnc-b0sn.onrender.com/login",
+    credentials
+  );
+  return data;
+};

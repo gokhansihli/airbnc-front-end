@@ -4,27 +4,61 @@
   flex-direction: row;
   gap: 0.4rem;
   background: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 3rem;
-  padding: 0 0 0rem 0.5rem;
-
+  border: 1px solid #c7c7c7;
+  border-radius: 1.4rem;
+  padding: 0 0 0 0.8rem;
+  margin: 0.6rem 0;
   cursor: pointer;
+}
 
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+.filter-bar:hover {
+  border: 1px solid #222222;
+  transition: box-shadow 0.2s, transform 0.1s, border-color 0.2s,
+    background-color 0.2s;
+}
+
+@media (max-width: 599px) {
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.4rem;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 1rem;
+    padding: 0.4rem 0 0.4rem 0.8rem;
+    margin: 0;
+    cursor: pointer;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.filter-header {
+  position: sticky;
+  text-align: center;
+  font-size: 1.08rem;
+  padding: 1rem 0;
+  box-shadow: 0 -2px 16px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  border-top: 1px solid #e0e0e0;
+  background-color: #fbfbfb;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .filter-section {
-  font-size: 1.2rem;
-  font-weight: 250;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1rem;
   border: none;
-  background: #ffffff;
   padding: 0.2rem 1rem 0 0;
 }
 
 .filter-symbol {
   color: #c1111f;
-  font-size: 300%;
+  padding-top: 6px;
 }
 
 h2 {
@@ -50,8 +84,8 @@ h2 {
   padding: 1rem;
   box-shadow: 0 -2px 16px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
-  border-top: 1px solid #e0e0e0; /* subtle separator like Airbnb */
-  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  background-color: #fbfbfb;
   z-index: 1;
   bottom: 0;
   left: 0;
@@ -71,20 +105,23 @@ h2 {
 
 .clear-btn:hover {
   border-radius: 8px;
-  background-color: rgb(243, 243, 243);
+  background-color: rgb(248, 248, 248);
+
+  padding: 0.38rem;
 }
 
 .apply-btn {
   flex: 0.2;
-  background-color: #0071c2;
+  background-color: #c1111f;
   color: #fff;
   border: none;
   padding: 0.6rem 1.2rem;
-  border-radius: 0.25rem;
+  border-radius: 32px;
+
   font-weight: 600;
   cursor: pointer;
 }
 
 .apply-btn:hover {
-  background-color: #005b99;
+  background-color: #ae0f1c;
 }

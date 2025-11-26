@@ -5,6 +5,7 @@ import { getProperties } from "../../utils/api";
 import { useEffect, useState } from "react";
 import "./PropertiesGrid.css";
 import { useSearchParams } from "react-router";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 export default function PropertiesGrid() {
   const [properties, setProperties] = useState([]);
@@ -34,21 +35,22 @@ export default function PropertiesGrid() {
       setProperties(properties);
       setIsLoading(false);
     } catch (error) {
-      console.log("Something went wrong!");
-      setHasErrored(error);
+      setHasErrored("Failed to load properties. Please try again later.");
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
     fetchProperties();
-  }, [searchParams]); // refetch when query params change
+  }, [searchParams]);
 
   useEffect(() => {
     fetchFilterProperties();
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingSkeleton />;
+
+  if (hasErrored) return <div className="error-message">{hasErrored}</div>;
 
   return (
     <div className="Properties">

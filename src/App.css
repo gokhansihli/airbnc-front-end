@@ -3,7 +3,6 @@ body {
 }
 
 .App {
-  border: red 1px solid;
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -17,17 +16,14 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 1rem 2rem 1rem 2rem;
-  border: green 1px solid;
+  padding: 1rem 2rem 1rem 2rem;
   grid-area: header;
 }
 
 .Properties {
-  border: red 1px solid;
   grid-area: properties;
 }
 
 .Footer {
-  border: black 1px solid;
   grid-area: footer;
 }

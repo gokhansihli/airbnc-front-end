@@ -1,0 +1,44 @@
+.drop-content {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  align-items: flex-start;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  min-width: 240px;
+  padding: 8px 0;
+
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  gap: 12px;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.content:hover {
+  background: #f7f7f7;
+}
+
+.content-divider {
+  width: 100%;
+  height: 1px;
+  background: #ebebeb;
+  margin: 8px 0;
+}

@@ -1,5 +1,80 @@
 .propertiesCard {
-  border: 1px solid red;
-  height: 25rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: auto;
+  max-width: 27rem;
+  text-align: left;
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.property-img {
   width: 100%;
+  height: auto;
+  max-height: 15rem;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 20px;
+}
+
+.property {
+  text-decoration: none;
+  color: inherit;
+}
+
+.property-type {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 440;
+  padding-top: 0.4rem;
+  padding-right: 0.2rem;
+}
+
+.rating {
+  font-weight: 300;
+}
+
+.property-name {
+  color: #6a6a6a;
+  padding-top: 0.4rem;
+}
+
+.host-name {
+  color: #6a6a6a;
+  padding-top: 0.2rem;
+}
+
+.price {
+  text-decoration: underline;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.favorite-btn svg {
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.2);
+}
+
+.favorite-btn.active {
+  color: #c1111f;
+}
+.favorite-btn.inactive {
+  color: #595959;
 }

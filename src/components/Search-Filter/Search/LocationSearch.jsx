@@ -25,7 +25,9 @@ export default function LocationSearch({
 
   return (
     <div className="search-section">
-      <span className="label">Location</span>
+      <span className="label" onClick={onClick}>
+        Location
+      </span>
       <input
         type="text"
         className="value input"

@@ -14,7 +14,6 @@
   animation: slideDown 0.2s ease-out;
 }
 
-/* 2. Guest Counter Styling */
 .guest-counter {
   display: flex;
   justify-content: space-between;

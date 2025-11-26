@@ -5,6 +5,7 @@ import LocationSearch from "./LocationSearch";
 import GuestSelector from "./GuestSelector";
 import outsideClick from "../../../utils/outsideClick";
 import "./search.css";
+import SearchIcon from "../../../icons/SearchIcon";
 
 export default function Search({ properties }) {
   const [input, setInput] = useState("");
@@ -46,7 +47,6 @@ export default function Search({ properties }) {
 
   return (
     <div className="search-bar" ref={searchRef}>
-      {/* Location Component */}
       <LocationSearch
         properties={properties}
         input={input}
@@ -58,7 +58,6 @@ export default function Search({ properties }) {
 
       <div className="divider" />
 
-      {/* Date Component */}
       <DateRange
         checkInDate={checkInDate}
         checkOutDate={checkOutDate}
@@ -70,7 +69,6 @@ export default function Search({ properties }) {
 
       <div className="divider" />
 
-      {/* Guest component */}
       <GuestSelector
         guestCount={guestCount}
         setGuestCount={setGuestCount}
@@ -79,7 +77,7 @@ export default function Search({ properties }) {
       />
 
       <button className="search-button" onClick={handleSearch}>
-        ⌃
+        <SearchIcon />
       </button>
     </div>
   );
