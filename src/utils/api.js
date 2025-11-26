@@ -50,3 +50,29 @@ export const login = async (credentials) => {
   );
   return data;
 };
+
+export const favouriteProperty = async (propertyId, userId, token) => {
+  const { data } = await axios.post(
+    `https://airbnc-b0sn.onrender.com/api/properties/${propertyId}/favourite`,
+    { guest_id: userId }, // body
+    {
+      headers: {
+        Authorization: `Bearer ${token}`, // token
+      },
+    }
+  );
+  console.log(data);
+  return data;
+};
+
+export const unfavouriteProperty = async (propertyId, userId, token) => {
+  const { data } = await axios.delete(
+    `https://airbnc-b0sn.onrender.com/api/properties/${propertyId}/users/${userId}/favourite`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return data;
+};

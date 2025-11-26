@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import "./propertiesCard.css";
-import Heart from "./Heart";
+import Favourite from "./Favourite";
 
 export default function PropertiesCard({ property }) {
-  const [isFavorited, setIsFavorited] = useState(property.isFavorited || false);
+  const [isFavorited, setIsFavorited] = useState(false);
 
   return (
     <div className="propertiesCard">
       <div className="image-wrapper">
-        <Heart isFavorited={isFavorited} setIsFavorited={setIsFavorited} />
+        <Favourite
+          property={property}
+          isFavorited={isFavorited}
+          setIsFavorited={setIsFavorited}
+        />
       </div>
       <Link to={`/properties/${property.property_id}`} className="property">
         <img
