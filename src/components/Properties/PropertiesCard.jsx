@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+
+import { AuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router";
 import "./propertiesCard.css";
 import Favourite from "./Favourite";
 
 export default function PropertiesCard({ property }) {
   const [isFavorited, setIsFavorited] = useState(false);
+
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (user && property.property_id) {
+      setIsFavorited(property.property_id === user.id);
+    } else {
+      setIsFavorited(false);
+    }
+  }, [user, property]);
 
   return (
     <div className="propertiesCard">

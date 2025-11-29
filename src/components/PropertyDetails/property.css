@@ -1,0 +1,283 @@
+.property-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.property-details > .property-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 480;
+  margin-bottom: 4px;
+  color: #222222;
+  text-align: left;
+}
+
+.property-name .save {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.property-name .save svg {
+  vertical-align: middle;
+}
+
+.image-grid {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  max-width: 1200px;
+  height: 55vh;
+  margin: 20px auto;
+}
+
+.image-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.image-box:first-child {
+  flex: 2;
+}
+
+.image-box.second {
+  flex: 1;
+  gap: 5px;
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 0 0 15px;
+}
+
+.second .image-row {
+  flex: 1;
+  overflow: hidden;
+}
+
+.second .image-row:first-child img {
+  border-top-right-radius: 15px;
+}
+
+.second .image-row:last-child img {
+  border-bottom-right-radius: 15px;
+}
+
+.second .image-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 599px) {
+  .image-grid {
+    flex-direction: column;
+    height: auto;
+  }
+  .image-box {
+    height: auto;
+  }
+  .second .image-row {
+    flex: none;
+    height: 160px;
+  }
+}
+
+.property-info {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap;
+  width: 100% !important;
+}
+
+.property-info h2 {
+  padding: 0;
+  margin: 6px 0;
+  font-weight: 440;
+  font-size: 1.2rem;
+}
+
+.property-info p {
+  color: #848383;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.liked-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.liked-star {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: #ccc;
+}
+
+.star {
+  font-size: 3rem;
+}
+
+.liked {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 18px 0;
+}
+
+.host-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0 20px 0;
+}
+
+.host-details img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.host-info {
+  text-align: left;
+}
+
+.host-info .host-name {
+  padding: 0;
+  font-size: 14px;
+}
+
+.about-property h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #222222 !important;
+}
+
+.about-property p {
+  font-weight: 340;
+  color: #222222 !important;
+}
+
+.facilities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin-top: 15px;
+}
+
+.facilities-content h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #222222 !important;
+}
+
+.facility {
+  padding: 8px 0;
+  font-size: 19px;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+}
+
+.icon-small {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1;
+  margin-right: 12px;
+}
+
+.property-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 80px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.property-main-right {
+  position: relative;
+}
+
+.sticky-box-wrapper {
+  position: sticky;
+  top: 100px;
+  padding-top: 24px;
+}
+
+.calendar-display-section {
+  padding: 20px 0;
+}
+
+.full-calendar-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+@media (max-width: 1024px) {
+  .property-main-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .full-calendar-container {
+    justify-content: flex-start;
+  }
+
+  .property-main-right {
+    position: static;
+  }
+  .sticky-box-wrapper {
+    position: static;
+    padding-top: 0;
+    margin-top: 24px;
+    margin-bottom: 80px;
+  }
+}

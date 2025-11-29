@@ -1,0 +1,146 @@
+.booking-box-container {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.price-info {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+.current-price {
+  font-weight: 600;
+}
+.per-night {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.booking-inputs {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.date-input-wrapper {
+  display: flex;
+}
+.date-input {
+  flex: 1;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+.date-input.check-in {
+  border-right: 1px solid #ddd;
+}
+.date-input .label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+.date-input .value {
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.guest-selector {
+  margin: 20px 0;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.reserve-button {
+  width: 100%;
+  padding: 14px 24px;
+  background: #c1111f;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.price-breakdown {
+  margin-top: 20px;
+}
+.breakdown-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.total-price {
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  font-weight: 600;
+}
+@media (max-width: 1024px) {
+  .booking-box-container {
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    border-top: 1px solid #ddd;
+    padding: 12px 24px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    background: white;
+  }
+
+  .guest-selector {
+    display: none;
+  }
+
+  .price-info,
+  .booking-inputs,
+  .price-breakdown,
+  .breakdown-line {
+    display: none;
+  }
+
+  .breakdown-line.total-price {
+    display: flex !important;
+    margin-right: auto;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    gap: 6px;
+  }
+
+  .reserve-button {
+    width: 140px;
+    padding: 10px 18px;
+    font-size: 14px;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+}
+
+.error-message {
+  font-weight: 300;
+  font-size: 14px;
+  padding: 0;
+}

@@ -10,6 +10,9 @@
 }
 
 .modal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 6rem;
   border: 1px solid #dddddd;
   background-color: #fefefe;
@@ -37,4 +40,10 @@
 .modal-button.active {
   outline: 1px solid black;
   outline-offset: 1;
+}
+
+.modal-button svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 1;
 }

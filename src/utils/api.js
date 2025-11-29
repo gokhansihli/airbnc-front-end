@@ -27,6 +27,97 @@ export const getProperties = async (filter = {}) => {
   return properties;
 };
 
+export const getPropertyById = async (id) => {
+  const data = await fetch(
+    `https://airbnc-b0sn.onrender.com/api/properties/${id}`
+  );
+
+  return data.json();
+};
+
+export const getPropertyReviews = async (id) => {
+  const data = await fetch(
+    `https://airbnc-b0sn.onrender.com/api/properties/${id}/reviews`
+  );
+
+  return data.json();
+};
+
+export const postReview = async (
+  propertyId,
+  userId,
+  rating,
+  comment,
+  token
+) => {
+  const { data } = await axios.post(
+    `https://airbnc-b0sn.onrender.com/api/properties/${propertyId}/reviews`,
+    {
+      guest_id: userId,
+      rating,
+      comment,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return data;
+};
+
+export const deleteReview = async (reviewId, token) => {
+  const { data } = await axios.delete(
+    `https://airbnc-b0sn.onrender.com/api/reviews/${reviewId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return data;
+};
+
+export const getPropertyBookings = async (id, token) => {
+  const { data } = await axios.get(
+    `https://airbnc-b0sn.onrender.com/api/properties/${id}/bookings`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return data;
+};
+
+export const postBooking = async (
+  propertyId,
+  userId,
+  check_in_date,
+  check_out_date,
+  token
+) => {
+  console.log(propertyId);
+  const { data } = await axios.post(
+    `https://airbnc-b0sn.onrender.com/api/properties/${propertyId}/booking`,
+    {
+      guest_id: userId,
+      check_in_date,
+      check_out_date,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return data;
+};
+
 export const getAmenities = async () => {
   const {
     data: { amenities },

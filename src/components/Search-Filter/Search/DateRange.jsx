@@ -1,4 +1,4 @@
-import DatePicker from "react-datepicker";
+import Calendar from "../../../utils/Calendar";
 import "react-datepicker/dist/react-datepicker.css";
 import "./dateRange.css";
 
@@ -23,19 +23,11 @@ export default function DateRange({
           className="date-picker-dropdown"
           onClick={(e) => e.stopPropagation()}
         >
-          <DatePicker
-            selected={checkInDate}
-            onChange={(dates) => {
-              const [start, end] = dates;
-              setCheckInDate(start);
-              setCheckOutDate(end);
-            }}
-            startDate={checkInDate}
-            endDate={checkOutDate}
-            selectsRange
-            inline
-            minDate={new Date()}
-            monthsShown={2}
+          <Calendar
+            checkInDate={checkInDate}
+            checkOutDate={checkOutDate}
+            setCheckInDate={setCheckInDate}
+            setCheckOutDate={setCheckOutDate}
           />
         </div>
       )}

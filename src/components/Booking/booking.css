@@ -1,0 +1,212 @@
+.booking-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: system-ui, sans-serif;
+  color: #222;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-arrow {
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.booking-main-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 1fr;
+  gap: 80px;
+}
+
+.booking-left-column {
+  padding-right: 60px;
+  border-right: 1px solid #ddd;
+}
+
+.section-instruction {
+  padding: 0;
+}
+
+.confirm-button {
+  background: #c1111f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 12px;
+  cursor: pointer;
+  margin-right: 100px;
+  margin-top: 10px;
+  font-family: "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  min-width: 180px;
+  text-align: center;
+}
+
+.error-message {
+  color: #c1111f;
+  margin-right: 90px;
+  margin-top: 10px;
+  font-family: "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  min-width: 180px;
+  text-align: center;
+}
+
+.booking-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  padding-bottom: 30px;
+  display: inline-block;
+  border-bottom: 1px solid #ddd;
+  padding-right: 100px;
+  margin-left: 20px;
+}
+
+.summary-box {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  margin-right: 20px;
+  position: sticky;
+  top: 30px;
+}
+
+.property-card {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.property-image {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.property-header {
+  display: flex;
+  align-items: center;
+}
+
+.property-header h2 {
+  padding-left: 0;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.property-details h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-divider {
+  height: 1px;
+  background-color: #ebebeb;
+  margin: 20px 0;
+}
+
+.booking-details-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.booking-details-group h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.price-details h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.price-line.total {
+  font-weight: 600;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+.price-breakdown-link {
+  display: block;
+  text-decoration: underline;
+  color: #222;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.savings-alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebffed;
+  color: #2a8a3f;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.booking-main-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 1fr;
+  gap: 80px;
+}
+
+@media (max-width: 800px) {
+  .booking-left-column .booking-section {
+    display: none;
+  }
+
+  .booking-left-column {
+    order: 2;
+    border: none;
+    padding: 0;
+  }
+
+  .booking-right-column {
+    order: 1;
+  }
+
+  .booking-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .confirm-button {
+    width: 96%;
+    padding: 16px 0;
+    font-size: 16px;
+  }
+}

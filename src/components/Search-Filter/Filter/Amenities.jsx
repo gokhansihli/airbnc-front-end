@@ -1,4 +1,5 @@
 import "./modalButtons.css";
+import amenityIcons from "../../../icons/amenityIcons";
 
 export default function Amenities({
   amenities,
@@ -16,18 +17,24 @@ export default function Amenities({
   return (
     <div>
       <h2>Amenities</h2>
+
       <div className="modal-buttons">
-        {amenities.map((amenity) => (
-          <button
-            key={amenity.amenity_slug}
-            className={`modal-button ${
-              selectAmenity.includes(amenity.amenity_slug) ? "active" : ""
-            }`}
-            onClick={() => toggleAmenity(amenity.amenity_slug)}
-          >
-            {amenity.amenity_text}
-          </button>
-        ))}
+        {amenities.map((amenity) => {
+          const Icon = amenityIcons[amenity.amenity_text]; // match by text
+
+          return (
+            <button
+              key={amenity.amenity_slug}
+              className={`modal-button ${
+                selectAmenity.includes(amenity.amenity_slug) ? "active" : ""
+              }`}
+              onClick={() => toggleAmenity(amenity.amenity_slug)}
+            >
+              {Icon && <Icon className="icon-small" />}
+              <span>{amenity.amenity_text}</span>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
