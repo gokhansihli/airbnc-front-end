@@ -73,7 +73,7 @@ export default function Filter({ properties }) {
         <div className="filter-section">Filters</div>
       </div>
       {isModal && (
-        <Modal onClick={() => setIsModal(false)}>
+        <Modal maxWidth="520px" onClick={() => setIsModal(false)}>
           <div className="filters">
             <div className="filter-header">Filters</div>
             <PropertyType
@@ -88,7 +88,7 @@ export default function Filter({ properties }) {
               setMaxPrice={setMaxPrice}
             />
             <Amenities
-              amenities={amenites} // fetched from API
+              amenities={amenites}
               selectAmenity={selectAmenity}
               setSelectAmenity={setSelectAmenity}
             />

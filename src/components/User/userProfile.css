@@ -1,0 +1,63 @@
+.user-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 3rem;
+  margin-top: 20px;
+}
+
+.editable-field {
+  display: block;
+  width: 16rem;
+  padding: 30px 0 30px 6px;
+  margin-left: 12px;
+  font-size: 20px;
+  font-weight: 200;
+  font-family: inherit;
+  line-height: 1.2;
+  border: none;
+  border-bottom: 0.8px solid #bfbfbf;
+  background: transparent;
+  box-sizing: border-box;
+
+  outline: none;
+}
+
+.editable-field:hover {
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #f4f4f4;
+  transition: background 0.1s;
+}
+
+.editable-field.active {
+  background-color: white;
+}
+
+.user-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-field-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.user-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-header h2 {
+  font-size: 34px;
+  font-weight: 300;
+}
+
+.user-header svg {
+  width: 70px;
+  height: 70px;
+}

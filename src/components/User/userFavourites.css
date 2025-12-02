@@ -1,0 +1,80 @@
+.user-favourites-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 16px;
+}
+
+.favourite-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.favourite-card {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.favourite-card img {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.favourite-info h3 {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+.favourite-info p {
+  margin: 4px 0;
+  color: #717171;
+  font-size: 14px;
+}
+
+.favourite-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.favourite-btn button {
+  font-size: 12px;
+  width: 110px;
+  border: none;
+  border-radius: 8px;
+  background: black;
+  color: white;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .user-favourites-container {
+    width: 100%;
+  }
+
+  .favourite-card-main {
+    padding: 10px;
+  }
+
+  .favourite-card {
+    gap: 1rem;
+  }
+
+  .favourite-card img {
+    width: 120px;
+    height: 80px;
+  }
+
+  .favourite-btn button {
+    width: 90px;
+    font-size: 11px;
+  }
+}

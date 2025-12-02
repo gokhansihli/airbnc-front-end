@@ -23,7 +23,7 @@ export default function Login() {
               setIsModal(true);
             }}
           >
-            <button className="login-btn">Log in</button>
+            <button className="login-btn">Login</button>
           </div>
 
           <LoginModal

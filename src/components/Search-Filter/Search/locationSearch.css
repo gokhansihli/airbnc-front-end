@@ -16,7 +16,7 @@
   list-style: none;
 }
 
-.dropdown-content .content {
+.dropdown-content .location-content {
   padding: 12px 14px;
   cursor: pointer;
   border-radius: 10px;
@@ -27,7 +27,7 @@
   font-weight: 400;
 }
 
-.dropdown-content .content:hover {
+.dropdown-content .location-content:hover {
   background-color: #f7f7f7;
 }
 

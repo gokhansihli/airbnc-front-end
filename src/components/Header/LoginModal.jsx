@@ -10,6 +10,7 @@ export default function LoginModal({ isModal, setIsModal, setIsDrop }) {
   const [isHost, setIsHost] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [surname, setSurname] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,6 +22,7 @@ export default function LoginModal({ isModal, setIsModal, setIsDrop }) {
       const signupData = {
         first_name: firstName,
         surname: surname,
+        phone_number: phoneNumber,
         email: email,
         is_host: isHost,
         password: password,
@@ -89,7 +91,7 @@ export default function LoginModal({ isModal, setIsModal, setIsDrop }) {
   return (
     <div>
       {isModal && (
-        <Modal onClick={closeModal}>
+        <Modal maxWidth="520px" onClick={closeModal}>
           <div className="auth-header">
             <div>{!isSignup ? "Login" : "Signup"}</div>
             <div className="close-btn" onClick={() => setIsModal(false)}>
@@ -135,6 +137,16 @@ export default function LoginModal({ isModal, setIsModal, setIsDrop }) {
                       value={surname}
                       placeholder="Surname"
                       onChange={(e) => setSurname(e.target.value)}
+                    />
+                  </div>
+
+                  <div>
+                    <h2>Phone number</h2>
+                    <input
+                      type="text"
+                      value={phoneNumber}
+                      placeholder="Phone number (optional)"
+                      onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                   </div>
 

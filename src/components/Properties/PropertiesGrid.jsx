@@ -21,14 +21,10 @@ export default function PropertiesGrid() {
 
   const fetchProperties = async () => {
     try {
-      // Convert all query parameters into a plain object
-      // searchParams.entries() makes array of arrays [ ["location", "London"], ["amenity", "Pool"] ]
-      // Object.fromEntries { location: "London", amenity: "Pool" }
       const filters = Object.fromEntries(searchParams.entries());
 
       const amenities = searchParams.getAll("amenity");
-      if (amenities.length > 0)
-        filters.amenity = amenities; //{ amenity: ["TV", "Kitchen"] }
+      if (amenities.length > 0) filters.amenity = amenities;
       else delete filters.amenity;
 
       const properties = await getProperties(filters);

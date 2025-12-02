@@ -1,21 +1,23 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
+import { AuthContext } from "../../contexts/AuthContext";
 import {
   getPropertyById,
   getPropertyReviews,
   getPropertyBookings,
+  getUserFavourites,
 } from "../../utils/api";
 import Reviews from "./Reviews.jsx";
 import BookingBox from "./BookingBox.jsx";
 import Calendar from "../../utils/Calendar.jsx";
-import HeartSmallIcon from "../../icons/HeartSmallIcon";
 import amenityIcons from "../../icons/amenityIcons.js";
-import { AuthContext } from "../../contexts/AuthContext";
 import PropertyLoadingSkeleton from "./PropertyLoadingSkeleton.jsx";
 import "./property.css";
+import Favourite from "../Properties/Favourite.jsx";
 
 export default function Property() {
   const [property, setProperty] = useState(null);
+  const [isFavorited, setIsFavourited] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [hasErrored, setHasErrored] = useState(false);
 
@@ -27,7 +29,7 @@ export default function Property() {
   const [averageRating, setAverageRating] = useState(0);
 
   const { id } = useParams();
-  const { user, token } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchProperty = async () => {
@@ -46,31 +48,47 @@ export default function Property() {
         const data = await getPropertyReviews(id);
         setReviews(data.reviews);
         setAverageRating(data.average_rating);
-      } catch (err) {
-        console.error("Failed to load reviews:", err);
+      } catch (error) {
+        console.error("Failed to load reviews:", error);
       }
     };
 
     const fetchBookings = async () => {
       try {
-        const data = await getPropertyBookings(id, user.token);
-
-        console.log(data);
+        const data = await getPropertyBookings(id);
 
         const dates = data.bookings.map((booking) => ({
           start: new Date(booking.check_in_date),
           end: new Date(booking.check_out_date),
         }));
         setBookedDates(dates);
-      } catch (err) {
-        console.error("Failed to fetch bookings:", err);
+      } catch (error) {
+        console.log("Failed to fetch bookings:", error);
       }
     };
 
-    fetchBookings();
+    const fetchFavourites = async () => {
+      if (user) {
+        try {
+          const data = await getUserFavourites(user?.id, user?.token);
+          console.log(data.favourites);
+
+          const favourite = data.favourites.some(
+            (fav) => fav.property_id === +id
+          );
+          setIsFavourited(favourite);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+
     fetchProperty();
     fetchReviews();
-  }, [id]);
+
+    fetchBookings();
+    fetchFavourites();
+  }, [id, user?.id, user?.token]);
 
   if (isLoading)
     return (
@@ -85,7 +103,12 @@ export default function Property() {
       <div className="property-name">
         <h1>{property.property_name}</h1>
         <div className="save">
-          <HeartSmallIcon /> save
+          <Favourite
+            property={property}
+            isFavorited={isFavorited}
+            setIsFavorited={setIsFavourited}
+          />
+          save
         </div>
       </div>
       <div className="image-content">
@@ -100,9 +123,9 @@ export default function Property() {
             )}
           </div>
           <div className="image-box second">
-            {property.images.slice(1, 5).map((img, idx) => (
-              <div key={idx} className="image-row">
-                <img src={img} alt={`Property ${idx + 1}`} />
+            {property.images.slice(1, 5).map((img, inderx) => (
+              <div key={inderx} className="image-row">
+                <img src={img} alt={`Property ${inderx + 1}`} />
               </div>
             ))}
           </div>

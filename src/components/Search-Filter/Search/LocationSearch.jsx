@@ -40,7 +40,7 @@ export default function LocationSearch({
         <ul className="dropdown-content">
           {filteredLocations.map((location) => (
             <li
-              className="content"
+              className="location-content"
               key={location}
               onClick={() => handleSelect(location)}
             >

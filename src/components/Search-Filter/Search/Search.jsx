@@ -11,15 +11,12 @@ export default function Search({ properties }) {
   const [input, setInput] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Dropdown visibility states
   const [isDropdown, setIsDropdown] = useState(false);
   const [isDateDropdown, setIsDateDropdown] = useState(false);
 
-  // Date states
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
 
-  //Guest states
   const [guestCount, setGuestCount] = useState(0);
   const [isGuestDropdown, setIsGuestDropdown] = useState(false);
 

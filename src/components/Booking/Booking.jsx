@@ -68,7 +68,7 @@ export default function Booking() {
       );
 
       setIsProcessing(false);
-      navigate(`/users/${user.id}`);
+      navigate(`/users/${user.id}?section=bookings`);
     } catch (err) {
       console.error(err);
       setError("Booking failed. Try again.");

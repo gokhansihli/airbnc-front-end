@@ -25,14 +25,27 @@
 
 .property-name .save {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
+  text-decoration: underline;
 }
 
-.property-name .save svg {
-  vertical-align: middle;
+.property-name .save .favorite-btn {
+  background: none;
+  border: none;
+  padding: 6px 0 0 0;
+  cursor: pointer;
+  position: static;
+}
+
+.property-name .save .favorite-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: none;
+}
+
+.property-name .save .favorite-btn:hover {
+  transform: scale(1.2);
 }
 
 .image-grid {

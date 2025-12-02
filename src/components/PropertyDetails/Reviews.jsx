@@ -15,7 +15,6 @@ export default function Reviews({ reviews, setReviews, property }) {
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(5);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState(null);
 
   const handlePostReview = async (e) => {
     e.preventDefault();
@@ -36,8 +35,7 @@ export default function Reviews({ reviews, setReviews, property }) {
       setRating(5);
       setIsModalOpen(false);
     } catch (err) {
-      console.error("Post review failed:", err);
-      setError("Failed to post review. Please try again.");
+      console.log("Post review failed:", err);
     }
   };
 

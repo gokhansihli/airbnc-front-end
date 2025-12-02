@@ -11,8 +11,8 @@ export default function PropertiesCard({ property }) {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    if (user && property.property_id) {
-      setIsFavorited(property.property_id === user.id);
+    if (user && property.favourited_by) {
+      setIsFavorited(property.favourited_by.includes(user.id));
     } else {
       setIsFavorited(false);
     }

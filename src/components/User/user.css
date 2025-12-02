@@ -1,0 +1,115 @@
+.user-page-container {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-family: system-ui, sans-serif;
+  color: #222;
+}
+
+.user-main-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+}
+
+.user-left-column {
+  display: flex;
+  flex-direction: column;
+  /* width: 300px; */
+  border-right: 0.4px solid #595959;
+}
+
+.user-left-column button {
+  padding: 16px 0 16px 25px;
+  margin: 0 32px 0 3rem;
+  text-align: left;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 460;
+  letter-spacing: 0.6px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.user-left-column button:hover {
+  background-color: #f4f4f4;
+  border-radius: 12px;
+}
+
+.user-left-column button.active {
+  background-color: #f4f4f4;
+  border-radius: 12px;
+}
+
+@media (min-width: 800px) and (max-width: 1140px) {
+  .user-page-container {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 30px 0;
+    font-family: system-ui, sans-serif;
+    color: #222;
+  }
+
+  .user-main-content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 80px;
+  }
+
+  .user-left-column button {
+    padding: 16px 0 16px 25px;
+    margin: 0 20px 0 0;
+    text-align: left;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    font-weight: 460;
+    letter-spacing: 0.6px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  .user-page-container {
+    width: 94vw;
+    margin: 0 auto;
+    padding: 30px 0;
+    font-family: system-ui, sans-serif;
+    color: #222;
+  }
+
+  .user-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .user-left-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 0.8px solid rgb(117, 117, 117);
+    border-inline-end: none;
+  }
+
+  .user-left-column button {
+    padding: 10px 20px;
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    font-weight: 460;
+    letter-spacing: 0.6px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .user-right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

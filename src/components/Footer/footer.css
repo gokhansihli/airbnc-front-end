@@ -8,10 +8,21 @@
 }
 
 .footer a {
+  display: inline-block;
   color: #000000;
   text-decoration: none;
 }
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+.footer a svg {
+  transition: fill 0.2s;
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.footer a:hover svg {
+  fill: #007bff;
 }

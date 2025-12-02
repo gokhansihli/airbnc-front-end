@@ -1,24 +1,29 @@
 import HeartIcon from "../../icons/HeartIcon";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import LoginModal from "../Header/LoginModal";
 import { favouriteProperty, unfavouriteProperty } from "../../utils/api";
 
 export default function Favourite({ property, isFavorited, setIsFavorited }) {
+  const [isLoginModal, setIsLoginModal] = useState(false);
+
   const { user, setUser } = useContext(AuthContext);
 
   const handleFavorite = async () => {
-    //direct user to login page if(!user)
-
-    try {
-      if (!isFavorited) {
-        await favouriteProperty(property.property_id, user.id, user.token);
-        setIsFavorited(true);
-      } else {
-        await unfavouriteProperty(property.property_id, user.id, user.token);
-        setIsFavorited(false);
+    if (!user) {
+      setIsLoginModal(true);
+    } else {
+      try {
+        if (!isFavorited) {
+          await favouriteProperty(property.property_id, user.id, user.token);
+          setIsFavorited(true);
+        } else {
+          await unfavouriteProperty(property.property_id, user.id, user.token);
+          setIsFavorited(false);
+        }
+      } catch (err) {
+        console.error(err);
       }
-    } catch (err) {
-      console.error(err);
     }
   };
   return (
@@ -26,6 +31,7 @@ export default function Favourite({ property, isFavorited, setIsFavorited }) {
       <button className="favorite-btn" onClick={handleFavorite}>
         <HeartIcon isFavorited={isFavorited} />
       </button>
+      <LoginModal isModal={isLoginModal} setIsModal={setIsLoginModal} />
     </div>
   );
 }
