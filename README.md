@@ -24,9 +24,9 @@ This project demonstrates the ability to build a complete web application from f
 >
 > **Email:** [user@user.com](mailto:user@user.com) > **Password:** user
 
-(Live will be here ASAP)
+[Live website](https://airbncon.netlify.app)
 
-## Main Features
+## Features
 
 ### Account
 
