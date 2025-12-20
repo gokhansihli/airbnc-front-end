@@ -18,13 +18,15 @@ export default function GuestSelector({
     <div className="search-section guest-section" onClick={onClick}>
       <span className="label">Guests</span>
       <span className="value">
-        {guestCount > 0 ? `${guestCount} guests` : "Add guests"}
+        {guestCount > 0
+          ? `${guestCount > 1 ? `${guestCount} guests` : `${guestCount} guest`}`
+          : "Add guests"}
       </span>
 
       {isOpen && (
         <div className="guest-dropdown" onClick={(e) => e.stopPropagation()}>
           <div className="guest-counter">
-            <span>Guest</span>
+            <span>{guestCount > 1 ? `Guests` : `Guest`}</span>
             <div className="controls">
               <button onClick={handleDecrement} disabled={guestCount === 0}>
                 –
