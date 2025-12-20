@@ -52,3 +52,12 @@
   padding: 0;
   margin: 0;
 }
+
+.dropdown-content .no-results {
+  color: #999;
+  cursor: default;
+}
+
+.dropdown-content .no-results:hover {
+  background-color: white;
+}

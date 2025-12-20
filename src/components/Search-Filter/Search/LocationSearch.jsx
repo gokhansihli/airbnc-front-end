@@ -38,15 +38,19 @@ export default function LocationSearch({
       />
       {isOpen && (
         <ul className="dropdown-content">
-          {filteredLocations.map((location) => (
-            <li
-              className="location-content"
-              key={location}
-              onClick={() => handleSelect(location)}
-            >
-              {location}
-            </li>
-          ))}
+          {filteredLocations.length > 0 ? (
+            filteredLocations.map((location) => (
+              <li
+                className="location-content"
+                key={location}
+                onClick={() => handleSelect(location)}
+              >
+                {location}
+              </li>
+            ))
+          ) : (
+            <li className="location-content no-results">No location found!</li>
+          )}
         </ul>
       )}
     </div>
