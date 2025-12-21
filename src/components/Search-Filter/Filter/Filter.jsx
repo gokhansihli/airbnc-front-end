@@ -9,6 +9,7 @@ import "./filter.css";
 import { useSearchParams } from "react-router";
 import { getAmenities } from "../../../utils/api";
 import FilterIcon from "../../../icons/FilterIcon";
+import CloseButtonIcon from "../../../icons/CloseButtonIcon";
 
 export default function Filter({ properties }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -75,7 +76,16 @@ export default function Filter({ properties }) {
       {isModal && (
         <Modal maxWidth="520px" onClick={() => setIsModal(false)}>
           <div className="filters">
-            <div className="filter-header">Filters</div>
+            <div className="filter-header">
+              <div>Filters</div>
+              <button
+                className="close-modal-btn"
+                onClick={() => setIsModal(false)}
+              >
+                <CloseButtonIcon />
+              </button>
+            </div>
+
             <PropertyType
               uniquePropertyTypes={uniquePropertyTypes}
               selectType={selectType}
